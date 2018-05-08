@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cancel shopping after the tax:)</title>
+</head>
+<body>
+
+<script>
+const phonePrice=400;
+let totalMoney= 3000;
+const accessories= 30;
+const tax= 0.18;
+
+
+function buyStuff(itemprice){
+    let phoneNumber= 0;
+    for(let i=itemprice; i<totalMoney; i++){
+        totalMoney -= itemprice;
+        phoneNumber++;
+    }
+    return phoneNumber;
+}
+
+const phoneNumber = buyStuff(phonePrice);
+const accessNumber= buyStuff(accessories)
+
+const beforetax = phoneNumber * phonePrice + accessNumber * accessories;
+
+const total = (beforetax + beforetax * tax).toFixed(2);
+
+
+console.log(`You could have bought ${phoneNumber} cellphones and ${accessNumber} accessories with your money before tax :(`)
+
+    
+</script>
+</body>
+</html>
